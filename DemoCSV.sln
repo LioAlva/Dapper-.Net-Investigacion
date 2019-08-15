@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoCSV", "DemoCSV.csproj", "{FF625B2D-C80D-4408-A642-306F27C07072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDapper", "..\ConsoleDapper\ConsoleDapper.csproj", "{E656CBEB-7A28-418C-B939-1DCEC50C40C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperBullCopyManager", "DapperBullCopyManager\DapperBullCopyManager.csproj", "{201A942C-ADD8-4915-A094-C623FDF1F967}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF625B2D-C80D-4408-A642-306F27C07072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF625B2D-C80D-4408-A642-306F27C07072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF625B2D-C80D-4408-A642-306F27C07072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF625B2D-C80D-4408-A642-306F27C07072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E656CBEB-7A28-418C-B939-1DCEC50C40C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E656CBEB-7A28-418C-B939-1DCEC50C40C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E656CBEB-7A28-418C-B939-1DCEC50C40C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E656CBEB-7A28-418C-B939-1DCEC50C40C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201A942C-ADD8-4915-A094-C623FDF1F967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201A942C-ADD8-4915-A094-C623FDF1F967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201A942C-ADD8-4915-A094-C623FDF1F967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201A942C-ADD8-4915-A094-C623FDF1F967}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
