@@ -68,16 +68,41 @@ namespace DapperBullCopyManager
         }
 
         // Proposals proposals, Careers careers,
-        private async Task LoteOperationDao (IDataReader model,string NameTable)   
+        private async Task<Response<string>> LoteOperationDao (IDataReader model,string NameTable)   
         {
-            string createTableSql = SqlSentences(sqlBulkCopy, NameTable);
+            var response = new Response<string>();
 
-            using (SqlCommand createTable = new SqlCommand(createTableSql, connection))
+            try
             {
-                 createTable.ExecuteNonQuery();
-            }
-            await sqlBulkCopy.WriteToServerAsync(model);
+                string createTableSql = SqlSentences(sqlBulkCopy, NameTable);
 
+                using (SqlCommand createTable = new SqlCommand(createTableSql, connection))
+                {
+                    createTable.ExecuteNonQuery();
+                }
+                await sqlBulkCopy.WriteToServerAsync(model);
+
+                response = new Response<string>
+                {
+                    Data = "",
+                    IsSuccess = true,
+                    Message = "Operaciòn exitosa"
+
+                };
+            }
+            catch (Exception)
+            {
+                response = new Response<string>
+                {
+                    Data = "",
+                    IsSuccess = false,
+                    Message = "Operaciòn fallida"
+                };
+                
+            }
+
+            return response;
+            
         }
         
         #endregion
