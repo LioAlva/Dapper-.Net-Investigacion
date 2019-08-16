@@ -33,6 +33,7 @@ namespace DapperBullCopyManager
                SixName="Prueba" 
             };
 
+
           var response = QueryMultiple<Parametro>(myDict,model);
             var que01 = response.Result.Data.Read<Album>().ToList();
         }
@@ -74,7 +75,7 @@ namespace DapperBullCopyManager
 
             try
             {
-                string createTableSql = SqlSentences(sqlBulkCopy, NameTable);
+                string createTableSql = SqlDropAndCreateTable(sqlBulkCopy, NameTable);
 
                 using (SqlCommand createTable = new SqlCommand(createTableSql, connection))
                 {
@@ -90,13 +91,13 @@ namespace DapperBullCopyManager
 
                 };
             }
-            catch (Exception)
+            catch (Exception exception)
             {
                 response = new Response<string>
                 {
                     Data = "",
                     IsSuccess = false,
-                    Message = "Operaciòn fallida"
+                    Message = exception.Message
                 };
                 
             }
@@ -131,7 +132,7 @@ namespace DapperBullCopyManager
             return myDesiredOutput;
         }
 
-        private static string SqlSentences(SqlBulkCopy bcp, string TableName)
+        private static string SqlDropAndCreateTable(SqlBulkCopy bcp, string TableName)
         {
             bcp.DestinationTableName = TableName;
 
@@ -239,7 +240,7 @@ namespace DapperBullCopyManager
 //            var albums = multi.Read<Album, AlbumArtist, Album>(
 //            (album, albumArtist, album) =>
 //            {
-//                album.albumArtist = album;
+//                album.albumArtist = album; 
 //                return albums;
 //            }).ToList();
 
